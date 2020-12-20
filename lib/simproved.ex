@@ -6,12 +6,9 @@ defmodule Simproved do
 
   @impl true
   def start(_type, _arguments) do
-    Supervisor.start_link(
-      [ Simproved.Consumer ],
-      [
-        strategy: :rest_for_one,
-        name: Simproved.Consumer
-      ]
-    )
+    children = [Simproved.Supervisor]
+    options = [strategy: :rest_for_one, name: Simproved.Supervisor]
+
+    Supervisor.start_link(children, options)
   end
 end

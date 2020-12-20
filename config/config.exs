@@ -1,3 +1,5 @@
 use Mix.Config
 
-config :nostrum, token: System.get_env("DISCORD_TOKEN")
+config :nostrum,
+  num_shards: :auto,
+  token: System.get_env("DISCORD_TOKEN")
