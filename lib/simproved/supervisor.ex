@@ -1,4 +1,7 @@
 defmodule Simproved.Supervisor do
+  @moduledoc """
+  """
+
   use Supervisor
 
   def start_link(args) do
